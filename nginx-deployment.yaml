@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    environment: xap-test
+  name: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      environment: xap-test
+  template:
+    metadata:
+      labels:
+        environment: xap-test
+    spec:
+      containers:
+      - image: nginx:1.16
+        name: nginx
